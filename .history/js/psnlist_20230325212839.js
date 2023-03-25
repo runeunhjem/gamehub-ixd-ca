@@ -65,10 +65,14 @@ const html = games.map(game => {
        `;
 }).join("");
       
-gamesContainer.innerHTML = html;
+// Set the HTML of the gamesContainer element to the generated HTML
+if(gamesContainer) {
+  gamesContainer.innerHTML = html;
+};
 
 // Select all game containers
 const gameContainers = document.querySelectorAll(".container.game-cards");
+
 console.log("gameContainers is: ", gameContainers);
 
 // Get the count of game containers
@@ -77,5 +81,6 @@ console.log("gameCount is: ", gameCount);
 // Select the element where you want to show the game count
 const gameCountElement = document.querySelector(".number-of-products");
 console.log("gameCountElement is: ", gameCountElement);
-// Set the text content of the element to the game count
+
 gameCountElement.textContent = `Number of games on site: ${gameCount}`;
+

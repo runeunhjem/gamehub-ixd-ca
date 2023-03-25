@@ -67,6 +67,7 @@ const html = games.map(game => {
       
 gamesContainer.innerHTML = html;
 
+
 // Select all game containers
 const gameContainers = document.querySelectorAll(".container.game-cards");
 console.log("gameContainers is: ", gameContainers);
@@ -79,3 +80,4 @@ const gameCountElement = document.querySelector(".number-of-products");
 console.log("gameCountElement is: ", gameCountElement);
 // Set the text content of the element to the game count
 gameCountElement.textContent = `Number of games on site: ${gameCount}`;
+
