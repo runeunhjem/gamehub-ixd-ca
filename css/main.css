@@ -1565,6 +1565,7 @@ legend {
 .ourprice {
   grid-area: ourprice;
   font-size: 1.5em;
+  padding-right: 0.5em;
 }
 
 .number {
@@ -1839,6 +1840,16 @@ legend {
 .cart-card-top {
   display: flex;
   justify-content: center;
+  width: 100%;
+  padding: 0 2em;
+}
+
+.cart-info {
+  width: 50%;
+}
+
+.cart-prices {
+  width: 23%;
 }
 
 .cart-item__name {
@@ -1850,7 +1861,6 @@ legend {
 .cart-item__image {
   align-items: flex-start;
   height: 80px;
-  width: 60px;
   margin: 10px auto;
 }
 .cart-item__image img {
@@ -1895,6 +1905,16 @@ legend {
   justify-content: center;
   margin-bottom: 1em;
   gap: 1em;
+  width: 100%;
+}
+
+#cart-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+#cart-buttons .ourprice {
+  font-size: 1rem;
 }
 
 .cart-quantity {

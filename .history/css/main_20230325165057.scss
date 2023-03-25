@@ -1928,14 +1928,12 @@ legend {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0 2em;
+
 }
 .cart-info {
-  width: 50%;
+  width: 50
 }
-.cart-prices {
-  width: 23%;
-}
+
 .cart-item__name {
   width: 150px;
   padding-left: 0.5em;
@@ -1944,7 +1942,7 @@ legend {
 .cart-item__image {
   align-items: flex-start;
   height: 80px;
-  // width: 30%;
+  width: 30%;
   margin: 10px auto;
   img {
     height: 80px;

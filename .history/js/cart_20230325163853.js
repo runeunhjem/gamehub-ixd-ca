@@ -47,7 +47,7 @@ cart.forEach((item, index) => {
           <div class="cart-item__total">$ ${totalPrice.toFixed(2)}</div>
         </div>
       </div>
-      <div class="cart-buttons" id="cart-buttons">
+      <div class="cart-buttons" id="cart>
           <div class="remove-item">
             <button class="remove-button" data-index="${index}">Remove</button>
           </div>

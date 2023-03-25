@@ -1927,15 +1927,9 @@ legend {
 .cart-card-top {
   display: flex;
   justify-content: center;
-  width: 100%;
-  padding: 0 2em;
+
 }
-.cart-info {
-  width: 50%;
-}
-.cart-prices {
-  width: 23%;
-}
+
 .cart-item__name {
   width: 150px;
   padding-left: 0.5em;
@@ -1944,7 +1938,7 @@ legend {
 .cart-item__image {
   align-items: flex-start;
   height: 80px;
-  // width: 30%;
+  width: 60px;
   margin: 10px auto;
   img {
     height: 80px;
@@ -1984,7 +1978,14 @@ legend {
   border-radius: var(--border-radius-boxes);
   cursor: pointer;
 }
-
+// #quantity {
+//   padding: 4px;
+//   // width: 60px;
+//   background-color: var(--color-black);
+//   color: var(--color-yellow-logo);
+//   border: var(--border-1px-yellow);
+//   border-radius: var(--border-radius-boxes);
+// }
 .cart-buttons {
   min-width: 180px;
   max-width: 800px;
@@ -1993,7 +1994,6 @@ legend {
   justify-content: center;
   margin-bottom: 1em;
   gap: 1em;
-  width: 100%
 }
 #cart-buttons {
  display: flex;
