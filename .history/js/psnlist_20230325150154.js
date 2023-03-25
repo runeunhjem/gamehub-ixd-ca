@@ -72,3 +72,4 @@ if(gamesContainer) {
 
 const productsElement = document.querySelector(".number-of-products");
 productsElement.textContent = `Number of games: ${games.length}`;
+

@@ -72,3 +72,36 @@ if(gamesContainer) {
 
 const productsElement = document.querySelector(".number-of-products");
 productsElement.textContent = `Number of games: ${games.length}`;
+
+// FILTER SECTION
+const filterSelect = document.getElementById("filters");
+filterSelect.addEventListener("change", (event) => {
+  const selectedFilter = event.target.value;
+  let filteredGames = games;
+
+  if (
+    selectedFilter === "Playstation 4" ||
+    selectedFilter === "Playstation 5"
+  ) {
+    filteredGames = filteredGames.filter(
+      (game) => game.platform === selectedFilter
+    );
+  } else if (
+    selectedFilter === "Full Disc Versions" ||
+    selectedFilter === "Key only Versions"
+  ) {
+    filteredGames = filteredGames.filter(
+      (game) => game.type === selectedFilter.replace(" Versions", "")
+    );
+  }
+
+  // Regenerate the HTML for the filtered games
+  const filteredHtml = filteredGames
+    .map((game) => {
+      // ...
+    })
+    .join("");
+
+  // Set the HTML of the gamesContainer element to the filtered HTML
+  gamesContainer.innerHTML = filteredHtml;
+});

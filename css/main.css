@@ -1321,6 +1321,11 @@ legend {
   background-color: var(--color-black-60);
   margin-bottom: 1em;
 }
+#search-field .filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .psn-grid {
   display: flex;
