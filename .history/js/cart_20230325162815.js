@@ -99,14 +99,14 @@ cartContainer.innerHTML += `
   </div>
 `;
 
-// const cartTotalElement = document.createElement("div");
-// cartTotalElement.classList.add("cart-total");
-// cartTotalElement.innerHTML = `
-//   <p class="total">A total of</p>
-//   <div class="cart-total__quantity">${cartTotalQuantity} items: </div>
-//   <div class="cart-total__price">$${cartTotalPrice.toFixed(2)}</div>
-// `;
-// cartContainer.appendChild(cartTotalElement);
+const cartTotalElement = document.createElement("div");
+cartTotalElement.classList.add("cart-total");
+cartTotalElement.innerHTML = `
+  <p class="total">A total of</p>
+  <div class="cart-total__quantity">${cartTotalQuantity} items: </div>
+  <div class="cart-total__price">$${cartTotalPrice.toFixed(2)}</div>
+`;
+cartContainer.appendChild(cartTotalElement);
 
 // update the cart total element
 const cartTotal = document.querySelector('.cart-total');

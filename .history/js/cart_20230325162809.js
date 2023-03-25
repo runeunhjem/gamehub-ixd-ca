@@ -99,14 +99,14 @@ cartContainer.innerHTML += `
   </div>
 `;
 
-// const cartTotalElement = document.createElement("div");
-// cartTotalElement.classList.add("cart-total");
-// cartTotalElement.innerHTML = `
-//   <p class="total">A total of</p>
-//   <div class="cart-total__quantity">${cartTotalQuantity} items: </div>
-//   <div class="cart-total__price">$${cartTotalPrice.toFixed(2)}</div>
-// `;
-// cartContainer.appendChild(cartTotalElement);
+const cartTotalElement = document.createElement("div");
+cartTotalElement.classList.add("cart-total");
+cartTotalElement.innerHTML = `
+  <p class="total">A total of</p>
+  <div class="cart-total__quantity">${cartTotalQuantity} items: </div>
+  <div class="cart-total__price">$${cartTotalPrice.toFixed(2)}</div>
+`;
+cartContainer.appendChild(cartTotalElement);
 
 // update the cart total element
 const cartTotal = document.querySelector('.cart-total');
@@ -127,7 +127,7 @@ cartCountElement.textContent = `A total of ${cartTotalQuantity} ${itemText} and 
 cartsummary.innerHTML += `
   <div class="order row1">Games:</div>
   <div class="row1 checkout_items yellow">(${cartTotalQuantity} items)</div>
-  <div class="amount row1"><span class="yellow">$ </span>${cartTotalPrice.toFixed(2)}</div>
+  <div class="amount row1"><span class="yellow">$ </span>${CartTotalPrice.toFixed(2)}</div>
   <div class="filler row2">.</div>
   <div class="filler row2"></div>
   <div class="amount_before row2 price__before__top yellow">

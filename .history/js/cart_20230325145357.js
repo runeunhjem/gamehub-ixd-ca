@@ -13,9 +13,6 @@ const cartContainer = document.getElementById("cart-container");
 let itemText = 0;
 let totalQuantity = 0;
 let totalPrice = 0;
-let cartTotalQuantity = 0;
-let cartTotalPrice = 0;
-
 cart.forEach((item, index) => {
 
   if (item.quantity === 1) {
@@ -24,8 +21,8 @@ cart.forEach((item, index) => {
     itemText = "items";
   };
 
-  totalQuantity = item.quantity;
-  totalPrice = item.quantity * item.price;
+  totalQuantity += item.quantity;
+  totalPrice += item.quantity * item.price;
   
   console.log("cart is: ", cart);
   cartContainer.innerHTML += `
@@ -60,8 +57,6 @@ cart.forEach((item, index) => {
         </div>
       </div>
   `;
-  cartTotalQuantity += item.quantity;
-  cartTotalPrice += item.quantity * item.price;
 });
 
 //Update quantity
@@ -99,35 +94,26 @@ cartContainer.innerHTML += `
   </div>
 `;
 
-// const cartTotalElement = document.createElement("div");
-// cartTotalElement.classList.add("cart-total");
-// cartTotalElement.innerHTML = `
-//   <p class="total">A total of</p>
-//   <div class="cart-total__quantity">${cartTotalQuantity} items: </div>
-//   <div class="cart-total__price">$${cartTotalPrice.toFixed(2)}</div>
-// `;
-// cartContainer.appendChild(cartTotalElement);
-
 // update the cart total element
 const cartTotal = document.querySelector('.cart-total');
 const totalQuantityElement = cartTotal.querySelector('.cart-total__quantity');
 const totalPriceElement = cartTotal.querySelector('.cart-total__price');
-totalQuantityElement.textContent = `${cartTotalQuantity} items: `;
-totalPriceElement.textContent = `$${cartTotalPrice.toFixed(2)}`;
+totalQuantityElement.textContent = `${totalQuantity} items: `;
+totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
 
 // update the cart summary element
 const cartCountElement = document.getElementById("cart-count");
-cartCountElement.textContent = `A total of ${cartTotalQuantity} ${itemText} and $ ${cartTotalPrice.toFixed(2)}`;
+cartCountElement.textContent = `A total of ${totalQuantity} ${itemText} and $ ${totalPrice.toFixed(2)}`;
 
 const freight = 4.95;
-const toPayPrice = freight + cartTotalPrice;
+const toPayPrice = freight + totalPrice;
 const cartsummary = document.getElementById("checkout__cart");
 // const cartCountElement = document.getElementById("cart-count");
-cartCountElement.textContent = `A total of ${cartTotalQuantity} ${itemText} and $ ${cartTotalPrice.toFixed(2)}`;
+cartCountElement.textContent = `A total of ${totalQuantity} ${itemText} and $ ${totalPrice.toFixed(2)}`;
 cartsummary.innerHTML += `
   <div class="order row1">Games:</div>
-  <div class="row1 checkout_items yellow">(${cartTotalQuantity} items)</div>
-  <div class="amount row1"><span class="yellow">$ </span>${cartTotalPrice.toFixed(2)}</div>
+  <div class="row1 checkout_items yellow">(${totalQuantity} items)</div>
+  <div class="amount row1"><span class="yellow">$ </span>${totalPrice.toFixed(2)}</div>
   <div class="filler row2">.</div>
   <div class="filler row2"></div>
   <div class="amount_before row2 price__before__top yellow">
@@ -147,7 +133,7 @@ cartsummary.innerHTML += `
   </div>
   <div class="filler change row5"></div>
   <div class="total row6">Total:</div>
-  <div class="checkout_items yellow row6">(${cartTotalQuantity} items)</div>
+  <div class="checkout_items yellow row6">(${totalQuantity} items)</div>
   <div class="totalamount row6">
     <span class="yellow">$ </span>${toPayPrice.toFixed(2)}
   </div>
