@@ -85,7 +85,7 @@ console.log("gameCount is: ", gameCount);
 const gameCountElement = document.querySelector(".number-of-products");
 console.log("gameCountElement is: ", gameCountElement);
 // set the text content of the element to the game count
-gameCountElement.textContent = `Total number OF games: ${gameCount}`;
+gameCountElement.textContent = `Number OF games: ${gameCount}`;
 
 
 // const numberOfGamesDiv = document.querySelector(".number-of-products");

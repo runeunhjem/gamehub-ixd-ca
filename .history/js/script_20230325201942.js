@@ -360,21 +360,21 @@ gamesContainer.innerHTML = filteredHtml;
 // // const filteredGameCards = gameCardsContainer.querySelectorAll(".container");
 // // const numberOfFilteredGames = filteredGameCards.length;
 
-// // select all game containers
-// const gameContainers = document.querySelectorAll('.game-cards');
+// select all game containers
+const gameContainers = document.querySelectorAll('.game-cards');
 
-// // get the count of game containers
-// const gameCount = gameContainers.length;
+// get the count of game containers
+const gameCount = gameContainers.length;
 
-// // select the element where you want to show the game count
-// const gameCountElement = document.querySelector(".number-of-products");
+// select the element where you want to show the game count
+const gameCountElement = document.querySelector('.game-count');
 
-// // set the text content of the element to the game count
-// gameCountElement.textContent = `Number of games: ${gameCount}`;
+// set the text content of the element to the game count
+gameCountElement.textContent = `Number of games: ${gameCount}`;
 
 
-// // const numberOfGamesDiv = document.querySelector(".number-of-products");
-// // const numberOfFilteredGames = document.querySelectorAll(".contaier");
-// // numberOfGamesDiv.textContent = `Number OF games: ${numberOfFilteredGames.length}`;
+const numberOfGamesDiv = document.querySelector(".number-of-products");
+const numberOfFilteredGames = document.querySelectorAll(".contaier");
+numberOfGamesDiv.textContent = `Number OF games: ${numberOfFilteredGames.length}`;
 
 

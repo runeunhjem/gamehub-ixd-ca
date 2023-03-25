@@ -74,8 +74,7 @@ if(gamesContainer) {
 // productsElement.textContent = `Number of games: ${games.length}`;
 
 // select all game containers
-const gameContainers = document.querySelectorAll(".container.game-cards");
-
+const gameContainers = document.querySelectorAll('.game-cards');
 console.log("gameContainers is: ", gameContainers);
 
 // get the count of game containers
@@ -85,7 +84,7 @@ console.log("gameCount is: ", gameCount);
 const gameCountElement = document.querySelector(".number-of-products");
 console.log("gameCountElement is: ", gameCountElement);
 // set the text content of the element to the game count
-gameCountElement.textContent = `Total number OF games: ${gameCount}`;
+gameCountElement.textContent = `Number of games: ${gameCount}`;
 
 
 // const numberOfGamesDiv = document.querySelector(".number-of-products");

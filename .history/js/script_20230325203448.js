@@ -378,3 +378,15 @@ gamesContainer.innerHTML = filteredHtml;
 // // numberOfGamesDiv.textContent = `Number OF games: ${numberOfFilteredGames.length}`;
 
 
+// select all game containers
+const gameContainers = document.querySelectorAll('.game-cards');
+console.log("gameContainers is: ", gameContainers);
+
+// get the count of game containers
+const gameCount = gameContainers.length;
+console.log("gameCount is: ", gameCount);
+// select the element where you want to show the game count
+const gameCountElement = document.querySelector(".number-of-products");
+console.log("gameCountElement is: ", gameCountElement);
+// set the text content of the element to the game count
+gameCountElement.textContent = `Number OF games: ${gameCount}`;
