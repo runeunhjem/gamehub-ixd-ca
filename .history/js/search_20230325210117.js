@@ -103,13 +103,9 @@ if(searchQuery) {
           </div>
         </div>`;
         const productsElement = document.querySelector(".number-of-products");
-        let searchWord;
         if (searchTerm) {
-          searchWord = searchTerm;
-        } else {
-          searchWord = queryString;
         }
-        productsElement.textContent = `Games with ${searchWord} in the title: ${filteredGames.length}`;
+        productsElement.textContent = `Games with: ${filteredGames.length}`;
   });
 } else {
     const searchForm = document.querySelector("#search-form");

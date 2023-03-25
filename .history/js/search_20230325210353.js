@@ -109,7 +109,7 @@ if(searchQuery) {
         } else {
           searchWord = queryString;
         }
-        productsElement.textContent = `Games with ${searchWord} in the title: ${filteredGames.length}`;
+        productsElement.textContent = `Games with${searchWord}: ${filteredGames.length}`;
   });
 } else {
     const searchForm = document.querySelector("#search-form");
