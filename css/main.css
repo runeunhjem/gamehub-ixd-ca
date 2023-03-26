@@ -499,6 +499,9 @@ input {
 .index_sign-in #username_signin, .index_sign-in #password_signin, .sellgames #username_signin, .sellgames #password_signin {
   width: 100%;
 }
+.index_sign-in #sign_in, .sellgames #sign_in {
+  margin-bottom: -0.8em;
+}
 .index_sign-in .sign_in, .index_sign-in .register, .index_sign-in .sellgames, .sellgames .sign_in, .sellgames .register, .sellgames .sellgames {
   margin: 0.6em 0;
   display: flex;
@@ -680,7 +683,7 @@ input {
   color: var(--color-black-90);
 }
 
-#first:focus::-moz-placeholder, #last:focus::-moz-placeholder, #email:focus::-moz-placeholder, #message:focus::-moz-placeholder, #cardnumber:focus::-moz-placeholder, #exp_date:focus::-moz-placeholder, #cvc:focus::-moz-placeholder {
+#first:focus::-moz-placeholder, #last:focus::-moz-placeholder, #email:focus::-moz-placeholder, #message:focus::-moz-placeholder, #cardnumber:focus::-moz-placeholder, #exp_date:focus::-moz-placeholder, #cvc:focus::-moz-placeholder, #username_signin:focus::-moz-placeholder, #password_signin:focus::-moz-placeholder {
   color: red;
 }
 
@@ -690,7 +693,9 @@ input {
 #message:focus::placeholder,
 #cardnumber:focus::placeholder,
 #exp_date:focus::placeholder,
-#cvc:focus::placeholder {
+#cvc:focus::placeholder,
+#username_signin:focus::placeholder,
+#password_signin:focus::placeholder {
   color: red;
 }
 
