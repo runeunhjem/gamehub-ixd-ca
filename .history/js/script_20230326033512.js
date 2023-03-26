@@ -256,13 +256,9 @@ if (filtersAreOnPage) {
     // Regenerate the HTML for the filtered games
     const filteredHtml = filteredGames
       .map((game) => {
-        const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-        // const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-        const typeIcon =
-          games.type === "Key"
-            ? ["images/ico_key.svg", "Key"]
-            : ["images/ico_disc.svg", "Disc"];
-
+        const heartIcon = game.isWishlisted === 1            ? "images/ico_heart.svg"
+            : "images/ico_heart_+.svg";
+        const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
         return `
         <div class="container game-cards" data-filter="${game.platform}-${game.type}">
         <div class="items ${game.itemName}">
@@ -283,7 +279,7 @@ if (filtersAreOnPage) {
           <div class="small psnleft type-text">${game.type}</div>
           <div class="small psnleft region">Region:</div>
           <div class="small psncenter region-ico">
-            <img src="images/ico_europe.svg" alt="Region | Europe">
+            <img src="${typeIcon}" alt="Disc">
           </div>
           <div class="small psnleft region-text">${game.region}</div>
           <div class="small psnleft platform">Platform:</div>

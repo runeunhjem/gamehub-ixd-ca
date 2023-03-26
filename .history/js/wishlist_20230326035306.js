@@ -14,11 +14,7 @@ wishlist.forEach((e, index) => {
   const coverImage = e.coverImage;
   const heartIcon = e.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
   // const typeIcon = e.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-  const typeIcon =
-    games.type === "Key"
-      ? ["images/ico_key.svg", "Key"]
-      : ["images/ico_disc.svg", "Disc"];
-
+  
   const itemName = e.itemName;
   const price = parseFloat(e.currentPrice);
   const platformShort = e.platformShort;

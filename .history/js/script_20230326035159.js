@@ -258,11 +258,7 @@ if (filtersAreOnPage) {
       .map((game) => {
         const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
         // const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-        const typeIcon =
-          games.type === "Key"
-            ? ["images/ico_key.svg", "Key"]
-            : ["images/ico_disc.svg", "Disc"];
-
+        
         return `
         <div class="container game-cards" data-filter="${game.platform}-${game.type}">
         <div class="items ${game.itemName}">

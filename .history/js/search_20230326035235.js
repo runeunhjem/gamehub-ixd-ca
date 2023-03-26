@@ -27,7 +27,7 @@ if(searchQuery) {
       const selectedPlatform = filter.value;
       const gameID = target.dataset.id;
       const game = games.find(game => game.id === gameID);
-      const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+      // const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
       // const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
       const typeIcon =
         games.type === "Key"

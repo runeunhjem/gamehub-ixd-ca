@@ -8,12 +8,7 @@ const html = games.map(game => {
 
   // Determine which heart icon to display based on isWishlisted
   const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-  // const typeIcon = games.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-  const typeIcon = games.type === "Key"
-      ? ["images/ico_key.svg", "Key"]
-      : ["images/ico_disc.svg", "Disc"];
-
-  return `
+  const typeIcon = games.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";  return `
   <div class="container game-cards" data-filter="${game.platform}-${game.type}">
     <div class="items ${game.itemName}">
       <div class="psnleft game-title">
@@ -28,7 +23,7 @@ const html = games.map(game => {
       <div class="small psnleft reldate">${game.releaseDate}</div>
       <div class="small psnleft">Type:</div>
       <div class="small psncenter type-ico">
-        <img src="${typeIcon}" alt="${game.type}">
+        <img src="images/ico_disc.svg" alt="Disc">
       </div>
       <div class="small psnleft type-text">${game.type}</div>
       <div class="small psnleft region">Region:</div>
