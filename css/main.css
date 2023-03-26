@@ -513,10 +513,27 @@ input {
   justify-content: left;
 }
 .index_sign-in .sign_in .sign-in-button, .index_sign-in .sign_in .register-button, .index_sign-in .register .sign-in-button, .index_sign-in .register .register-button, .index_sign-in .sellgames .sign-in-button, .index_sign-in .sellgames .register-button, .sellgames .sign_in .sign-in-button, .sellgames .sign_in .register-button, .sellgames .register .sign-in-button, .sellgames .register .register-button, .sellgames .sellgames .sign-in-button, .sellgames .sellgames .register-button {
+  cursor: pointer;
+  align-items: center;
+}
+.index_sign-in .sign_in .sign-in-button-div, .index_sign-in .sign_in .register-button-div, .index_sign-in .register .sign-in-button-div, .index_sign-in .register .register-button-div, .index_sign-in .sellgames .sign-in-button-div, .index_sign-in .sellgames .register-button-div, .sellgames .sign_in .sign-in-button-div, .sellgames .sign_in .register-button-div, .sellgames .register .sign-in-button-div, .sellgames .register .register-button-div, .sellgames .sellgames .sign-in-button-div, .sellgames .sellgames .register-button-div {
   display: flex;
   justify-content: center;
-  height: 40px;
-  align-items: center;
+}
+.index_sign-in .sign_in .sign-in-button-div button, .index_sign-in .sign_in .register-button-div button, .index_sign-in .register .sign-in-button-div button, .index_sign-in .register .register-button-div button, .index_sign-in .sellgames .sign-in-button-div button, .index_sign-in .sellgames .register-button-div button, .sellgames .sign_in .sign-in-button-div button, .sellgames .sign_in .register-button-div button, .sellgames .register .sign-in-button-div button, .sellgames .register .register-button-div button, .sellgames .sellgames .sign-in-button-div button, .sellgames .sellgames .register-button-div button {
+  width: 15em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.index_sign-in .sign_in .sign-in-button:hover, .index_sign-in .sign_in .register-button:hover, .index_sign-in .register .sign-in-button:hover, .index_sign-in .register .register-button:hover, .index_sign-in .sellgames .sign-in-button:hover, .index_sign-in .sellgames .register-button:hover, .sellgames .sign_in .sign-in-button:hover, .sellgames .sign_in .register-button:hover, .sellgames .register .sign-in-button:hover, .sellgames .register .register-button:hover, .sellgames .sellgames .sign-in-button:hover, .sellgames .sellgames .register-button:hover {
+  font-weight: 600;
+  width: 15em;
+  background-color: var(--color-black);
+  color: var(--color-yellow-logo);
+  border: var(--border-1px-yellow);
+  border-radius: var(--border-radius-boxes);
 }
 .index_sign-in .sign_in #username_signin, .index_sign-in .sign_in #password_signin, .index_sign-in .register #username_signin, .index_sign-in .register #password_signin, .index_sign-in .sellgames #username_signin, .index_sign-in .sellgames #password_signin, .sellgames .sign_in #username_signin, .sellgames .sign_in #password_signin, .sellgames .register #username_signin, .sellgames .register #password_signin, .sellgames .sellgames #username_signin, .sellgames .sellgames #password_signin {
   width: 100%;
@@ -555,6 +572,7 @@ input {
   align-items: center;
   font-size: 1.15rem;
   white-space: nowrap;
+  border-radius: var(--border-radius-boxes);
 }
 .index_sign-in button, .sellgames button {
   border: 1px solid var(--color-black-90);
@@ -596,10 +614,6 @@ input {
 }
 .index_sign-in .register #paypal, .index_sign-in .register #confirm, .index_sign-in .register #title, .index_sign-in .sellgames #paypal, .index_sign-in .sellgames #confirm, .index_sign-in .sellgames #title, .sellgames .register #paypal, .sellgames .register #confirm, .sellgames .register #title, .sellgames .sellgames #paypal, .sellgames .sellgames #confirm, .sellgames .sellgames #title {
   width: 330px;
-}
-.index_sign-in .register .register-button, .index_sign-in .sellgames .register-button, .sellgames .register .register-button, .sellgames .sellgames .register-button {
-  margin-top: 1.3em;
-  width: 100%;
 }
 
 .sell-info {
@@ -1378,12 +1392,12 @@ legend {
 }
 
 .container {
-  background-color: var(--color-black-60);
+  background-color: var(--color-black-90);
   border: var(--border-1px-yellow);
   border-radius: var(--border-radius-boxes);
   min-height: 390px;
   margin: 0.5em;
-  padding: 4px 5px 0 5px;
+  padding: 0.5em 1em 1em 1em;
   transition: all 0.3s;
 }
 
@@ -1392,6 +1406,7 @@ legend {
   box-shadow: 3px 3px 8px var(--color-yellow-logo);
   transition: all 0.3s;
   transform: scale(1.05);
+  z-index: 1000;
 }
 
 .details-section .container {
@@ -1410,7 +1425,7 @@ legend {
   display: grid;
   justify-content: center;
   grid-template-columns: 160px 62px 42px 76px;
-  grid-template-rows: 76px 38px 24px 26px 38px 22px 33px 32px 15px;
+  grid-template-rows: 76px 38px 24px 26px 38px 28px 33px 38px 15px;
   grid-template-areas: "gametitle gametitle gametitle gametitle" "gamecover releasedate releasedate reldate" "gamecover type typeico typetext" "gamecover region regionico regiontext" "gamecover platform platformico platformtext" "gamecover gsrating gsrating rating" "gamecover readreview readreview togglewishlist" "gamecover . . price" "gamecover . . pricebefore";
 }
 
