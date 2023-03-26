@@ -13,7 +13,8 @@ function createDetails() {
   const game = games.find(game => game.id === gameID);
   console.log("game.type is: ", game.type);
   console.log("game.isWishlisted is: ", game.isWishlisted);
-  const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";  
+  const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+  // const typeIcon = game.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
   const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
     
   // Set the game title as the page title

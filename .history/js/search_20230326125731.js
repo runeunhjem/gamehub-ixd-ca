@@ -207,8 +207,10 @@ filterSelect.addEventListener("change", (event) => {
   // Regenerate the HTML for the filtered games
   const filteredHtml = filteredGames
   .map((game) => {
-    const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";    
-    const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+    const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+    const typeIcon = game.type === "Disc" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+    const typeIcon =
+      game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
     return `
     <div class="container game-cards" data-filter="${game.platform}-${game.type}">
     <div class="items ${game.itemName}">

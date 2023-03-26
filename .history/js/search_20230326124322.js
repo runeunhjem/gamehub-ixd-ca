@@ -28,7 +28,8 @@ if(searchQuery) {
       const gameID = target.dataset.id;
       const game = games.find(game => game.id === gameID);
       const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-      const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+      const typeIcon = game.type === "Disc" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+      
 
       gamesContainer.innerHTML = '';
       let filteredGames = searchTerm.length === 0 ? games : games.filter(game => game.itemName.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -39,8 +40,8 @@ if(searchQuery) {
         // append game to gamesContainer
       });
     });
-    const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";    
-    const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+    const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+    const typeIcon = game.type === "Disc" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
       gamesContainer.innerHTML += `
         <div class="container game-cards" data-filter="${game.platform}-${game.type}">
           <div class="items ${game.itemName}">
@@ -207,8 +208,9 @@ filterSelect.addEventListener("change", (event) => {
   // Regenerate the HTML for the filtered games
   const filteredHtml = filteredGames
   .map((game) => {
-    const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";    
-    const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+    const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+    const typeIcon = game.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+
     return `
     <div class="container game-cards" data-filter="${game.platform}-${game.type}">
     <div class="items ${game.itemName}">

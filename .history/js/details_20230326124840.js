@@ -1,5 +1,9 @@
 import { games } from "./db.js";
 
+const heartIcon = games.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+// const typeIcon = games.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+const typeIcon = games.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+console.log("games.type is: ");
 const gamesContainer = document.getElementById("games-container");
 
 // CREATE HTML WITH DEATILS FROM API
@@ -8,13 +12,9 @@ function createDetails() {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
   const gameID = parseInt(params.get("id"));
-  
+
   // Find the game object with the matching ID
   const game = games.find(game => game.id === gameID);
-  console.log("game.type is: ", game.type);
-  console.log("game.isWishlisted is: ", game.isWishlisted);
-  const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";  
-  const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
     
   // Set the game title as the page title
   document.title = game.itemName;
