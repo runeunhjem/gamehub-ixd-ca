@@ -522,10 +522,12 @@ input {
 }
 .index_sign-in .sign_in .sign-in-button-div button, .index_sign-in .sign_in .register-button-div button, .index_sign-in .register .sign-in-button-div button, .index_sign-in .register .register-button-div button, .index_sign-in .sellgames .sign-in-button-div button, .index_sign-in .sellgames .register-button-div button, .sellgames .sign_in .sign-in-button-div button, .sellgames .sign_in .register-button-div button, .sellgames .register .sign-in-button-div button, .sellgames .register .register-button-div button, .sellgames .sellgames .sign-in-button-div button, .sellgames .sellgames .register-button-div button {
   width: 15em;
-  margin-top: 1em;
   display: flex;
   justify-content: center;
-  padding: 1em;
+  padding: 0.5em;
+}
+.index_sign-in .sign_in .register-button-div, .index_sign-in .register .register-button-div, .index_sign-in .sellgames .register-button-div, .sellgames .sign_in .register-button-div, .sellgames .register .register-button-div, .sellgames .sellgames .register-button-div {
+  margin-top: 1em;
 }
 .index_sign-in .sign_in .sign-in-button:hover, .index_sign-in .sign_in .register-button:hover, .index_sign-in .register .sign-in-button:hover, .index_sign-in .register .register-button:hover, .index_sign-in .sellgames .sign-in-button:hover, .index_sign-in .sellgames .register-button:hover, .sellgames .sign_in .sign-in-button:hover, .sellgames .sign_in .register-button:hover, .sellgames .register .sign-in-button:hover, .sellgames .register .register-button:hover, .sellgames .sellgames .sign-in-button:hover, .sellgames .sellgames .register-button:hover {
   font-weight: 600;
@@ -931,6 +933,19 @@ input {
 .contact {
   max-width: 100%;
 }
+.contact #contact-fieldset {
+  margin: 0 1em;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.contact .form_first, .contact .form_last, .contact .form_email, .contact .message {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 0.5em;
+  margin: 0.4em auto;
+  width: 300px;
+}
 .contact h1 {
   margin-top: 0.4em;
   font-weight: 400;
@@ -939,26 +954,29 @@ input {
   text-align: center;
   font-size: 1rem;
 }
+.contact .send-message {
+  width: 100%;
+}
 .contact .contact__wrapper {
   display: block;
   justify-content: space-around;
 }
-.contact .contact__wrapper .contact-info, .contact .contact__wrapper .visit-info, .contact .contact__wrapper .send-message {
+.contact .contact__wrapper .contact-info, .contact .contact__wrapper .visit-info {
   margin: 0 auto;
   width: 100%;
   padding: 0.5em;
 }
-.contact .contact__wrapper .contact-info .spacer, .contact .contact__wrapper .visit-info .spacer, .contact .contact__wrapper .send-message .spacer {
+.contact .contact__wrapper .contact-info .spacer, .contact .contact__wrapper .visit-info .spacer {
   height: 1em;
 }
-.contact .contact__wrapper .contact-info p, .contact .contact__wrapper .visit-info p, .contact .contact__wrapper .send-message p {
+.contact .contact__wrapper .contact-info p, .contact .contact__wrapper .visit-info p {
   font-size: 1rem;
 }
-.contact .contact__wrapper .contact-info a, .contact .contact__wrapper .visit-info a, .contact .contact__wrapper .send-message a {
+.contact .contact__wrapper .contact-info a, .contact .contact__wrapper .visit-info a {
   color: var(--color-white);
   text-decoration: none;
 }
-.contact .contact__wrapper .contact-info a:hover, .contact .contact__wrapper .visit-info a:hover, .contact .contact__wrapper .send-message a:hover {
+.contact .contact__wrapper .contact-info a:hover, .contact .contact__wrapper .visit-info a:hover {
   color: var(--color-yellow-logo);
 }
 .contact .contact__wrapper .contact-info {
@@ -1004,8 +1022,11 @@ input {
   text-align: center;
 }
 .contact .contact__wrapper .send-message .sendus-message_form_wrapper {
-  width: 340px;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 .contact .contact__wrapper .send-message #email, .contact .contact__wrapper .send-message #title, .contact .contact__wrapper .send-message #paypal, .contact .contact__wrapper .send-message #confirm {
