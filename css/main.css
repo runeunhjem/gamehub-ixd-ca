@@ -480,9 +480,6 @@ input {
 .sellgames .form_country, .sellgames .form_phone, .sellgames .form_username, .sellgames .form_password {
   width: 50%;
 }
-.index_sign-in .form_repeat-password, .index_sign-in .form_street-address, .index_sign-in .form_email, .sellgames .form_repeat-password, .sellgames .form_street-address, .sellgames .form_email {
-  width: 100%;
-}
 .index_sign-in #sellgames_form_wrapper, .sellgames #sellgames_form_wrapper {
   justify-content: center;
 }
@@ -623,7 +620,7 @@ input {
   width: 100%;
 }
 .index_sign-in .register #paypal, .index_sign-in .register #confirm, .index_sign-in .register #title, .index_sign-in .sellgames #paypal, .index_sign-in .sellgames #confirm, .index_sign-in .sellgames #title, .sellgames .register #paypal, .sellgames .register #confirm, .sellgames .register #title, .sellgames .sellgames #paypal, .sellgames .sellgames #confirm, .sellgames .sellgames #title {
-  width: 330px;
+  width: 100%;
 }
 
 .sell-info {
@@ -636,7 +633,22 @@ input {
 }
 
 /* Register form & Sell Games Form*/
-.fieldset_register, .fieldset_sellgames, fieldset {
+.form_repeat-password, .form_street-address, .form_email,
+#confirm {
+  width: 100%;
+}
+
+#full_register_wrapper {
+  min-width: 350px;
+  width: 95vw;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  padding: 0 2em;
+}
+
+.fieldset_register, fieldset {
   min-width: 350px;
   width: 95vw;
   max-width: 600px;
@@ -644,14 +656,13 @@ input {
   justify-content: center;
   margin-bottom: 2em;
 }
-.fieldset_register label, .fieldset_sellgames label, fieldset label {
+.fieldset_register label, fieldset label {
   text-align: left;
 }
 
 .fieldset_sellgames {
   display: flex;
   justify-content: center;
-  height: 680px;
   min-width: 350px;
   width: 95vw;
   max-width: 600px;
@@ -660,22 +671,30 @@ input {
   margin: 1em auto;
 }
 
+#sellGames-button {
+  padding: 0.5em 2em;
+}
+
 .sellgames-button {
   width: 200px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-}
-.sellgames-button a {
-  display: flex;
-  justify-content: space-around;
 }
 
 .form_confirm {
   margin: 1em auto;
 }
 
-.form_paypal label, .form_confirm label {
+.form_asking-price, .form_platform, .form_type,
+.form_cover, .form_rating, .form_gamespot-link {
+  width: 50%;
+}
+
+.form_paypal, .form_confirm, .form_title {
+  width: 100%;
+}
+.form_paypal label, .form_confirm label, .form_title label {
   width: 330px;
 }
 
@@ -1043,7 +1062,7 @@ input {
   justify-content: space-around;
 }
 .contact .contact__wrapper .send-message #email, .contact .contact__wrapper .send-message #title, .contact .contact__wrapper .send-message #paypal, .contact .contact__wrapper .send-message #confirm {
-  width: 326px;
+  width: 100%;
 }
 .contact .contact__wrapper .send-message textarea, .contact .contact__wrapper .send-message input {
   text-indent: 10px;
