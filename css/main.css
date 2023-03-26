@@ -480,9 +480,6 @@ input {
 .sellgames .form_country, .sellgames .form_phone, .sellgames .form_username, .sellgames .form_password {
   width: 50%;
 }
-.index_sign-in #sellgames_form_wrapper, .sellgames #sellgames_form_wrapper {
-  justify-content: center;
-}
 .index_sign-in .full_sign-in_wrapper, .sellgames .full_sign-in_wrapper {
   display: flex;
   flex-direction: column;
@@ -695,6 +692,13 @@ input {
 }
 .form_paypal label, .form_confirm label, .form_title label {
   width: 330px;
+}
+
+#sellgames_form_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 #message:focus-within, #first:focus-within, #last:focus-within, #first-name:focus-within, #last-name:focus-within, #email:focus-within,
