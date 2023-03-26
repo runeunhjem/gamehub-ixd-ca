@@ -13,8 +13,8 @@ wishlist.forEach((e, index) => {
   let game = games.find(e => parseInt(e.id, 10) === parseInt(gameID, 10));
   const coverImage = e.coverImage;
   const heartIcon = e.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-  const typeIcon = e.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-  // c
+  // const typeIcon = e.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+  c
 
   const itemName = e.itemName;
   const price = parseFloat(e.currentPrice);

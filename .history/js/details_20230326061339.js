@@ -1,8 +1,8 @@
 import { games } from "./db.js";
 
 const heartIcon = games.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-const typeIcon = games.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
 // const typeIcon = games.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+const typeIcon = games.type === "Key" ? ["images/ico_key.svg"] : ["images/ico_disc.svg"];
 
 const gamesContainer = document.getElementById("games-container");
 

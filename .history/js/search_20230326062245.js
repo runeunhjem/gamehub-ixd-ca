@@ -28,7 +28,7 @@ if(searchQuery) {
       const gameID = target.dataset.id;
       const game = games.find(game => game.id === gameID);
       const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-      const typeIcon = game.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+      const typeIcon = games.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
       
 
       gamesContainer.innerHTML = '';
@@ -41,7 +41,7 @@ if(searchQuery) {
       });
     });
     const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-    const typeIcon = game.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+    const typeIcon = games.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
       gamesContainer.innerHTML += `
         <div class="container game-cards" data-filter="${game.platform}-${game.type}">
           <div class="items ${game.itemName}">
@@ -209,7 +209,7 @@ filterSelect.addEventListener("change", (event) => {
   const filteredHtml = filteredGames
   .map((game) => {
     const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-    const typeIcon = game.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
+    const typeIcon = games.type === "Key" ? ["images/ico_disc.svg"] : ["images/ico_key.svg"];
 
     return `
     <div class="container game-cards" data-filter="${game.platform}-${game.type}">
