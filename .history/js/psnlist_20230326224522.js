@@ -77,6 +77,6 @@ const gameCount = gameContainers.length;
 // console.log("gameCount is: ", gameCount);
 // Select the element where you want to show the game count
 const gameCountElement = document.querySelector(".number-of-products");
-// console.log("gameCountElement is: ", gameCountElement);
+console.log("gameCountElement is: ", gameCountElement);
 // Set the text content of the element to the game count
 gameCountElement.textContent = `Number of games on site: ${gameCount}`;

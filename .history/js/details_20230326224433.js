@@ -219,17 +219,17 @@ function addToWishlist(event) {
     // game is already in wishlist, remove it
     wishlist.splice(existingIndex, 1);
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    // console.log(`Game with ID ${gameID} removed from wishlist`);    
+    console.log(`Game with ID ${gameID} removed from wishlist`);    
   } else {        
     const game = games.find((g) => parseInt(g.id, 10) === parseInt(gameID, 10));
     
-    // console.log("game is: ", game);
+    console.log("game is: ", game);
     const coverImage = game.coverImage;
     const isWishlisted = 1;
     
-    // console.log("game.id is: ", game.id);
-    // console.log("game.isWishlisted is: ", game.isWishlisted);
-    // console.log("coverImage is: ", coverImage);
+    console.log("game.id is: ", game.id);
+    console.log("game.isWishlisted is: ", game.isWishlisted);
+    console.log("coverImage is: ", coverImage);
     const container = target.closest('.container');
     const itemName = game.itemName;
     const currentPrice = game.currentPrice;
@@ -261,16 +261,16 @@ function addToWishlist(event) {
         
     wishlist.push(product);
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    // console.log("wishlist is: ", wishlist);
+    console.log("wishlist is: ", wishlist);
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartGame = cart.find(game => game.id === gameID);
-    // console.log("cartGame is: ", cartGame);
+    console.log("cartGame is: ", cartGame);
     if (cartGame) {
       cartGame.isWishlisted = 1;
       localStorage.setItem("cart", JSON.stringify(cart));
     }
-    // console.log("cart is: ", cart);
+    console.log("cart is: ", cart);
   };
 };
 

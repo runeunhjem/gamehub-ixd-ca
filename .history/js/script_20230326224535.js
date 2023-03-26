@@ -75,13 +75,13 @@ function addToCart(event) {
   const gameID = target.dataset.id;  
   // console.log("gameID is: ", gameID);
   const game = games.find((g) => parseInt(g.id, 10) === parseInt(gameID, 10));
-  // console.log("game is: ", game);
+  console.log("game is: ", game);
   const coverImage = game.coverImage;
   let quantity = 1;
   const isWishlisted = game.isWishlisted;
-  // console.log("game.id is: ", game.id);
-  // console.log("game.isWishlisted is: ", game.isWishlisted);
-  // console.log("coverImage is: ", coverImage);
+  console.log("game.id is: ", game.id);
+  console.log("game.isWishlisted is: ", game.isWishlisted);
+  console.log("coverImage is: ", coverImage);
   const container = target.closest('.container');
   const itemName = container.querySelector('.game-title .type').textContent;
   const price = parseFloat(container.querySelector(".currentPrice").textContent);
@@ -108,7 +108,7 @@ function addToCart(event) {
     cart.push(product);
   };  
   localStorage.setItem("cart", JSON.stringify(cart));
-  // console.log("cart is: ", cart);  
+  console.log("cart is: ", cart);  
 };
 
 // ADD TO WISHLIST FUNCTION
@@ -117,29 +117,29 @@ function addToWishlist(event) {
   if (!target.classList.contains('add-to-wishlist')) {
     return; // ignore clicks on non-add-to-wishlist elements
   } 
-  // console.log("target.dataset.id is: ", target.dataset.id);
+  console.log("target.dataset.id is: ", target.dataset.id);
   const gameID = target.dataset.id;  
-  // console.log("gameID is: ", gameID);
+  console.log("gameID is: ", gameID);
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
   const existingIndex = wishlist.findIndex((game) => game.id === gameID);
   if (existingIndex >= 0) {
     // game is already in wishlist, remove it
     wishlist.splice(existingIndex, 1);
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    // console.log(`Game with ID ${gameID} removed from wishlist`);
+    console.log(`Game with ID ${gameID} removed from wishlist`);
     
   } else {
     
     // event.target.src = isWishlisted ? "images/ico_heart_+.svg" : "images/ico_heart.svg";
     const game = games.find((g) => parseInt(g.id, 10) === parseInt(gameID, 10));
     
-    // console.log("game is: ", game);
+    console.log("game is: ", game);
     const coverImage = game.coverImage;
     const isWishlisted = 1;
     
-    // console.log("game.id is: ", game.id);
-    // console.log("game.isWishlisted is: ", game.isWishlisted);
-    // console.log("coverImage is: ", coverImage);
+    console.log("game.id is: ", game.id);
+    console.log("game.isWishlisted is: ", game.isWishlisted);
+    console.log("coverImage is: ", coverImage);
     const container = target.closest('.container');
     const itemName = game.itemName;
     const currentPrice = game.currentPrice;
@@ -175,16 +175,16 @@ function addToWishlist(event) {
     // let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     wishlist.push(product);
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    // console.log("wishlist is: ", wishlist);
+    console.log("wishlist is: ", wishlist);
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartGame = cart.find(game => game.id === gameID);
-    // console.log("cartGame is: ", cartGame);
+    console.log("cartGame is: ", cartGame);
     if (cartGame) {
       cartGame.isWishlisted = 1;
       localStorage.setItem("cart", JSON.stringify(cart));
     }
-    // console.log("cart is: ", cart);
+    console.log("cart is: ", cart);
   };
 };
 

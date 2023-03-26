@@ -107,7 +107,7 @@ if(searchQuery) {
     searchForm.addEventListener("submit", function(event) {
       event.preventDefault();
       searchTerm = document.querySelector("#search").value;
-      // console.log(`SearchTerm is: ${searchTerm}`);
+      console.log(`SearchTerm is: ${searchTerm}`);
       gamesContainer.innerHTML = '';
   
   input.value = ""; 

@@ -48,7 +48,7 @@ const cartContainer = document.getElementById("cart-container");
 
 
 // generate HTML code for each item in the cart and add it to the cart container
-// console.log(cart);
+console.log(cart);
 // cart.forEach(game => console.log(game.id));
 cart.forEach((item, index) => {
   // const game = games.find((g) => g.itemName === item.name);

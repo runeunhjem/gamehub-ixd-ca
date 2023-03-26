@@ -17,7 +17,7 @@ if(searchQuery) {
     // console.log(`SearchTerm is: ${searchTerm}`);
   } else {  
     searchTerm = document.querySelector("#search").value;
-    // console.log(`SearchTerm is: ${searchTerm}`);
+    console.log(`SearchTerm is: ${searchTerm}`);
   };
   gamesContainer.innerHTML = '';
   let filteredGames = searchQuery.length === 0 ? games : games.filter(game => game.itemName.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -107,7 +107,7 @@ if(searchQuery) {
     searchForm.addEventListener("submit", function(event) {
       event.preventDefault();
       searchTerm = document.querySelector("#search").value;
-      // console.log(`SearchTerm is: ${searchTerm}`);
+      console.log(`SearchTerm is: ${searchTerm}`);
       gamesContainer.innerHTML = '';
   
   input.value = ""; 

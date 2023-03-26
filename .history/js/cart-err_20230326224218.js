@@ -21,7 +21,7 @@ function addToCart() {
   const itemName = container.querySelector('.game-title .type').textContent;
   const price = parseFloat(container.querySelector(".currentPrice").textContent);
   const coverImage = container.querySelector(".game-img").getAttribute("src");
-  // console.log(coverImage);
+  console.log(coverImage);
   const total = price;
   const formattedTotal = total.toFixed(2);
   const product = {
@@ -32,7 +32,7 @@ function addToCart() {
     total: formattedTotal,
     image: coverImage
   };
-  // console.log(product);
+  console.log(product);
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(product);
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -48,7 +48,7 @@ const cartContainer = document.getElementById("cart-container");
 
 
 // generate HTML code for each item in the cart and add it to the cart container
-// console.log(cart);
+console.log(cart);
 // cart.forEach(game => console.log(game.id));
 cart.forEach((item, index) => {
   // const game = games.find((g) => g.itemName === item.name);
