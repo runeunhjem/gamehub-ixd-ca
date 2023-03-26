@@ -1,5 +1,5 @@
 // VARIABLES
-const signInForm = document.querySelector("#sign_in");
+const registerForm = document.querySelector("#register");
 const signInButton = document.querySelector("#sign-in-button");
 const usernameSignIn = document.querySelector("#username_signin");
 const usernameSignInError = document.querySelector("#username_signinError");
@@ -42,19 +42,19 @@ function validateForm(event) {
       passwordSigninError.style.display = "block";
       passwordSignin.style.backgroundColor = "#fafad2";
       passwordSignin.style.color = "#FF0000";
-    }    
+    }
     if (
       checkLength(usernameSignIn.value, 3) &&
-      checkLength(passwordSignin.value, 3)      
+      checkLength(passwordSignin.value, 3)
     ) {
       signInButton.setAttribute("type", "submit");
-      signInButton.innerText = "Sign In";      
+      signInButton.innerText = "Sign In";
       signInButton.addEventListener("click", successMessage);
-    } else {      
-      signInButton.innerText = "Form Error";      
-    };
-  };
-};
+    } else {
+      signInButton.innerText = "Form Error";
+    }
+  }
+}
 
 // EVENTLISTENER TO CHECK IF FORM IS SUBMITTED
 signInForm.addEventListener("submit", function (event) {
@@ -73,7 +73,7 @@ function checkLength(value, len) {
   } else {
     return false;
   }
-};
+}
 
 // SHOW SUCCESS MESSAGE WHEN FORM IS SUBMITTED
 function successMessage() {
@@ -86,4 +86,4 @@ function successMessage() {
   setTimeout(function () {
     window.location.assign("psn-list.html");
   }, 4000);
-};
+}

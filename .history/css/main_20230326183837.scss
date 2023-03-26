@@ -777,10 +777,7 @@ input {
 #exp_date:focus::placeholder,
 #cvc:focus::placeholder,
 #username_signin:focus::placeholder,
-#password_signin:focus::placeholder,
-#username:focus::placeholder,
-#password:focus::placeholder,
-#repeat-password:focus::placeholder
+#password_signin:focus::placeholder
  {
   color: red;
 }

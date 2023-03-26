@@ -7,6 +7,7 @@ const passwordSignin = document.querySelector("#password_signin");
 const passwordSigninError = document.querySelector("#password_signinError");
 let formSubmitted = false;
 
+
 // CHANGE PLACEHOLDERS TO INPUT TIPS ON FOCUS
 usernameSignIn.addEventListener("focus", function () {
   usernameSignIn.placeholder = "Min 4 characters";

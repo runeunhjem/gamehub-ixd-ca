@@ -558,7 +558,7 @@ input {
   .successful {
     margin: 0.4em;
     font-size: 1em;
-    color: var(--color-yellow-logo);
+    color: var()
   }
   .sign_in, .register, .sellgames  {
     margin: 0.6em 0;
@@ -777,10 +777,7 @@ input {
 #exp_date:focus::placeholder,
 #cvc:focus::placeholder,
 #username_signin:focus::placeholder,
-#password_signin:focus::placeholder,
-#username:focus::placeholder,
-#password:focus::placeholder,
-#repeat-password:focus::placeholder
+#password_signin:focus::placeholder
  {
   color: red;
 }

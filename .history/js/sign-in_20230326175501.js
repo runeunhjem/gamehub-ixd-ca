@@ -7,6 +7,7 @@ const passwordSignin = document.querySelector("#password_signin");
 const passwordSigninError = document.querySelector("#password_signinError");
 let formSubmitted = false;
 
+
 // CHANGE PLACEHOLDERS TO INPUT TIPS ON FOCUS
 usernameSignIn.addEventListener("focus", function () {
   usernameSignIn.placeholder = "Min 4 characters";
@@ -46,13 +47,15 @@ function validateForm(event) {
     if (
       checkLength(usernameSignIn.value, 3) &&
       checkLength(passwordSignin.value, 3)      
-    ) {
+    ) 
+    {
       signInButton.setAttribute("type", "submit");
       signInButton.innerText = "Sign In";      
       signInButton.addEventListener("click", successMessage);
-    } else {      
+    } 
+    else {      
       signInButton.innerText = "Form Error";      
-    };
+    }
   };
 };
 
@@ -86,4 +89,8 @@ function successMessage() {
   setTimeout(function () {
     window.location.assign("psn-list.html");
   }, 4000);
+
+  // setTimeout(window.location.assign('psn-list.html'), 4000); //RESET CONTACT FORM AFTER 4 SECONDS
+  // setTimeout(successMessage, 4000); //RESET CONTACT FORM AFTER 4 SECONDS
+  // window.location.assign("psn-list.html");
 };

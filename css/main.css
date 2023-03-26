@@ -502,6 +502,11 @@ input {
 .index_sign-in #sign_in, .sellgames #sign_in {
   margin-bottom: -0.8em;
 }
+.index_sign-in .successful, .sellgames .successful {
+  margin: 0.4em;
+  font-size: 1em;
+  color: var(--color-yellow-logo);
+}
 .index_sign-in .sign_in, .index_sign-in .register, .index_sign-in .sellgames, .sellgames .sign_in, .sellgames .register, .sellgames .sellgames {
   margin: 0.6em 0;
   display: flex;
@@ -683,7 +688,7 @@ input {
   color: var(--color-black-90);
 }
 
-#first:focus::-moz-placeholder, #last:focus::-moz-placeholder, #email:focus::-moz-placeholder, #message:focus::-moz-placeholder, #cardnumber:focus::-moz-placeholder, #exp_date:focus::-moz-placeholder, #cvc:focus::-moz-placeholder, #username_signin:focus::-moz-placeholder, #password_signin:focus::-moz-placeholder {
+#first:focus::-moz-placeholder, #last:focus::-moz-placeholder, #email:focus::-moz-placeholder, #message:focus::-moz-placeholder, #cardnumber:focus::-moz-placeholder, #exp_date:focus::-moz-placeholder, #cvc:focus::-moz-placeholder, #username_signin:focus::-moz-placeholder, #password_signin:focus::-moz-placeholder, #username:focus::-moz-placeholder, #password:focus::-moz-placeholder, #repeat-password:focus::-moz-placeholder {
   color: red;
 }
 
@@ -695,7 +700,10 @@ input {
 #exp_date:focus::placeholder,
 #cvc:focus::placeholder,
 #username_signin:focus::placeholder,
-#password_signin:focus::placeholder {
+#password_signin:focus::placeholder,
+#username:focus::placeholder,
+#password:focus::placeholder,
+#repeat-password:focus::placeholder {
   color: red;
 }
 
