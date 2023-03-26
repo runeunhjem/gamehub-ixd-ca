@@ -633,8 +633,7 @@ input {
 }
 
 /* Register form & Sell Games Form*/
-.form_repeat-password, .form_street-address, .form_email,
-#confirm {
+.form_repeat-password, .form_street-address, .form_email, #confirm {
   width: 100%;
 }
 
