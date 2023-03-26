@@ -17,11 +17,13 @@ let cartTotalQuantity = 0;
 let cartTotalPrice = 0;
 
 cart.forEach((item, index) => {
+
   if (item.quantity === 1) {
     itemText = "item";
   } else if (item.quantity === 0) {
     itemText = "items";
-  } else if (item.quantity === undefined || item.quantity === null) {
+  } else {
+  } else if (item.quantity === "undefined") {
     itemText = "items";
   } else {
     itemText = "items";
@@ -29,17 +31,14 @@ cart.forEach((item, index) => {
 
   totalQuantity = item.quantity;
   totalPrice = item.quantity * item.price;
-  // console.log("iq is", item.quantity);
+  
   // console.log("cart is: ", cart);
-
   cartContainer.innerHTML += `
     <div class="cart-item">
       <div class="cart-card-top">
         <div class="cart-item__image">
           <a href="details.html?id=${item.id}" class="results-list">
-            <img src="${item.coverImage}" alt="${item.name} ${
-    item.platformShort
-  }">
+            <img src="${item.coverImage}" alt="${item.name} ${item.platformShort}">
           </a>
         </div>
         <div class="cart-info">
@@ -60,9 +59,7 @@ cart.forEach((item, index) => {
           <div class="cart-quantity">
             <div class="quantity">
               <label for="${index}" class="ourprice psnright">Quantity:</label>
-              <input class="howmany" type="number" data-index="${index}" id="${index}" name="quantity" value="${
-    item.quantity
-  }">
+              <input class="howmany" type="number" data-index="${index}" id="${index}" name="quantity" value="${item.quantity}">
             </div>
           </div>
         </div>

@@ -25,11 +25,10 @@ cart.forEach((item, index) => {
     itemText = "items";
   } else {
     itemText = "items";
-  };
-
+  }
   totalQuantity = item.quantity;
   totalPrice = item.quantity * item.price;
-  // console.log("iq is", item.quantity);
+  console.log("iq is", item.quantity);
   // console.log("cart is: ", cart);
 
   cartContainer.innerHTML += `
