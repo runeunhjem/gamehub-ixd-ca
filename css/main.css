@@ -220,7 +220,7 @@ footer a {
   background: var(--color-black);
   border-radius: 0.5em;
   padding-top: 0px;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .navbar-top .topmenu__images {

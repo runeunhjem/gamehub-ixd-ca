@@ -8,10 +8,10 @@ const html = games.map(game => {
 
   // Determine which heart icon to display based on isWishlisted
   const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
-  const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-  // const typeIcon = games.type === "Key"
-  //     ? ["images/ico_key.svg", "Key"]
-  //     : ["images/ico_disc.svg", "Disc"];
+  // const typeIcon = games.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+  const typeIcon = games.type === "Key"
+      ? ["images/ico_key.svg]
+      : ["images/ico_disc.svg"];
 
   return `
   <div class="container game-cards" data-filter="${game.platform}-${game.type}">
