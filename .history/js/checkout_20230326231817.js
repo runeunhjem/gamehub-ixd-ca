@@ -211,7 +211,7 @@ cart.forEach((item) => {
 });
 
 const freight = 4.95;
-const toPayPrice = freight + cartTotalPrice;
+const toPayPrice = freight + totalPrice;
 const cartsummary = document.getElementById("checkout__cart");
 // const cartCountElement = document.getElementById("cart-count");
 // cartCountElement.textContent = `A total of ${totalQuantity} ${itemText} and $ ${totalPrice.toFixed(2)}`;

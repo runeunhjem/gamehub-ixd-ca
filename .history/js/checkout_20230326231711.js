@@ -10,8 +10,7 @@ const cvcError = document.querySelector("#cvcError");
 const payNowButton = document.querySelector("#paynow-button");
 const confirmSuccess = document.querySelector(".payment-complete");
 let formSubmitted = false;
-let cartTotalQuantity = 0;
-let cartTotalPrice = 0;
+
 
 function formatCreditCardNumber(cardNumber) {
   // Remove all non-numeric characters
@@ -206,12 +205,10 @@ let totalPrice = 0;
 cart.forEach((item) => {
   totalQuantity += item.quantity;
   totalPrice += parseFloat(item.total);
-  cartTotalQuantity += item.quantity;
-  cartTotalPrice += item.quantity * item.price;
 });
 
 const freight = 4.95;
-const toPayPrice = freight + cartTotalPrice;
+const toPayPrice = freight + totalPrice;
 const cartsummary = document.getElementById("checkout__cart");
 // const cartCountElement = document.getElementById("cart-count");
 // cartCountElement.textContent = `A total of ${totalQuantity} ${itemText} and $ ${totalPrice.toFixed(2)}`;
