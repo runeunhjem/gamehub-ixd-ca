@@ -1161,6 +1161,7 @@ input {
 }
 .checkout h1, .cart h1 {
   margin: 0.3em auto;
+  text-align: center;
 }
 .checkout .row3, .checkout .row5, .cart .row3, .cart .row5 {
   height: 20px;
