@@ -534,12 +534,10 @@ input {
     width: 50%
   }
   .form_repeat-password, .form_street-address, .form_email {
-    width: 100%;    
-  }
-  .form_repeat-password {
+    width: 100%;
     margin-bottom: 1em;
   }
-
+  .form_repeat-password 
   #sellgames_form_wrapper {
     justify-content: center;
   }

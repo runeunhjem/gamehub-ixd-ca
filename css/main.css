@@ -483,6 +483,9 @@ input {
 .index_sign-in .form_repeat-password, .index_sign-in .form_street-address, .index_sign-in .form_email, .sellgames .form_repeat-password, .sellgames .form_street-address, .sellgames .form_email {
   width: 100%;
 }
+.index_sign-in .form_repeat-password, .sellgames .form_repeat-password {
+  margin-bottom: 1em;
+}
 .index_sign-in #sellgames_form_wrapper, .sellgames #sellgames_form_wrapper {
   justify-content: center;
 }
@@ -522,10 +525,9 @@ input {
 }
 .index_sign-in .sign_in .sign-in-button-div button, .index_sign-in .sign_in .register-button-div button, .index_sign-in .register .sign-in-button-div button, .index_sign-in .register .register-button-div button, .index_sign-in .sellgames .sign-in-button-div button, .index_sign-in .sellgames .register-button-div button, .sellgames .sign_in .sign-in-button-div button, .sellgames .sign_in .register-button-div button, .sellgames .register .sign-in-button-div button, .sellgames .register .register-button-div button, .sellgames .sellgames .sign-in-button-div button, .sellgames .sellgames .register-button-div button {
   width: 15em;
-  margin-top: 1em;
   display: flex;
   justify-content: center;
-  padding: 1em;
+  padding: 0.7em;
 }
 .index_sign-in .sign_in .sign-in-button:hover, .index_sign-in .sign_in .register-button:hover, .index_sign-in .register .sign-in-button:hover, .index_sign-in .register .register-button:hover, .index_sign-in .sellgames .sign-in-button:hover, .index_sign-in .sellgames .register-button:hover, .sellgames .sign_in .sign-in-button:hover, .sellgames .sign_in .register-button:hover, .sellgames .register .sign-in-button:hover, .sellgames .register .register-button:hover, .sellgames .sellgames .sign-in-button:hover, .sellgames .sellgames .register-button:hover {
   font-weight: 600;
