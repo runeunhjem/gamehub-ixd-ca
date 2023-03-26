@@ -176,24 +176,21 @@ function createDetails() {
         total: formattedTotal
       };
       console.log(product);
-      
-       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-       const existingProductIndex = cart.findIndex((p) => p.id === gameID);
-       if (existingProductIndex !== -1) {
-         cart[existingProductIndex].quantity += quantity;
-         cart[existingProductIndex].total = (
-           cart[existingProductIndex].quantity *
-           cart[existingProductIndex].price
-         ).toFixed(2);
-       } else {
-         cart.push(product);
-       }
-       localStorage.setItem("cart", JSON.stringify(cart));
-       console.log("cart is: ", cart);  
-
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
     };
 
-    
+     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingProductIndex = cart.findIndex(p => p.id === gameID);
+  if (existingProductIndex !== -1) {
+    cart[existingProductIndex].quantity += quantity;
+    cart[existingProductIndex].total = (cart[existingProductIndex].quantity * cart[existingProductIndex].price).toFixed(2);
+  } else {
+    cart.push(product);
+  };  
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("cart is: ", cart);  
     // Add event listeners to the buttons
     document.querySelector('.add-to-cart').addEventListener('click', addToCart);
     document.querySelector('.checkout-event').addEventListener('click', () => {

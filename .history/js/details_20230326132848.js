@@ -176,7 +176,10 @@ function createDetails() {
         total: formattedTotal
       };
       console.log(product);
-      
+      // let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // cart.push(product);
+      // localStorage.setItem('cart', JSON.stringify(cart));
+
        let cart = JSON.parse(localStorage.getItem("cart")) || [];
        const existingProductIndex = cart.findIndex((p) => p.id === gameID);
        if (existingProductIndex !== -1) {

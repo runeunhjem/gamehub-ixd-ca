@@ -4,21 +4,22 @@ const gamesContainer = document.getElementById("games-container");
 
 // CREATE HTML WITH DEATILS FROM API
 function createDetails() {
-  
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
   const gameID = parseInt(params.get("id"));
-  
+
   // Find the game object with the matching ID
-  const game = games.find(game => game.id === gameID);
+  const game = games.find((game) => game.id === gameID);
   console.log("game.type is: ", game.type);
   console.log("game.isWishlisted is: ", game.isWishlisted);
-  const heartIcon = game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";  
-  const typeIcon = game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
-    
+  const heartIcon =
+    game.isWishlisted === 1 ? "images/ico_heart.svg" : "images/ico_heart_+.svg";
+  const typeIcon =
+    game.type === "Key" ? "images/ico_key.svg" : "images/ico_disc.svg";
+
   // Set the game title as the page title
   document.title = game.itemName;
-  
+
   gamesContainer.innerHTML = `
     <div class="main__wrapper">
       <section class="product_details" aria-label="Product Details | Main Section">
@@ -123,85 +124,122 @@ function createDetails() {
         </div>
       </section>
     </div>
-    `;    
-    
-    // Calculate Price
-    const quantityInput = document.getElementById('quantity');
-    const price = game.currentPrice;
-    quantityInput.addEventListener('input', () => {
-      const quantity = parseInt(quantityInput.value);
-      const total = price * quantity;
-      const formattedTotal = total.toFixed(2);
-      console.log(`Total price: $${formattedTotal}`);
-    });
-    
-    // ADD TO CART FUNCTION
-    function addToCart() {      
-      const quantity = parseInt(quantityInput.value);        
-      console.log("game is: ", game);
-      const coverImage = game.coverImage;      
-      console.log("game.id is: ", game.id);
-      console.log("game.isWishlisted is: ", game.isWishlisted);      
-      const itemName = game.itemName;
-      const currentPrice = game.currentPrice;      
-      const beforePrice = game.beforePrice;
-      const platformShort = game.platformShort;
-      const type = game.type;
-      const releaseDate = game.releaseDate;
-      const isWishlisted = game.isWishlisted;
-      const region = game.region;
-      const platform = game.platform;
-      const gamespotRating = game.gamespotRating;
-      const total = currentPrice * quantity;
-      const formattedTotal = total.toFixed(2);
-      const product = {
-        id: game.id,
-        itemName: itemName,
-        coverImage: coverImage,
-        isWishlisted: isWishlisted,
-        releaseDate: releaseDate,
-        type: type,
-        region: region,
-        platform: platform,
-        gamespotRating: gamespotRating,
-        quantity: 1,
-        currentPrice: currentPrice,
-        beforePrice: beforePrice,        
-        platformShort: platformShort,
-        name: itemName,
-        coverImage: coverImage,
-        quantity: quantity,
-        price: currentPrice,
-        platformShort: `${platformShort} | ${type} Version`,
-        total: formattedTotal
-      };
-      console.log(product);
-      
-       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-       const existingProductIndex = cart.findIndex((p) => p.id === gameID);
-       if (existingProductIndex !== -1) {
-         cart[existingProductIndex].quantity += quantity;
-         cart[existingProductIndex].total = (
-           cart[existingProductIndex].quantity *
-           cart[existingProductIndex].price
-         ).toFixed(2);
-       } else {
-         cart.push(product);
-       }
-       localStorage.setItem("cart", JSON.stringify(cart));
-       console.log("cart is: ", cart);  
+    `;
 
+  // Calculate Price
+  const quantityInput = document.getElementById("quantity");
+  const price = game.currentPrice;
+  quantityInput.addEventListener("input", () => {
+    const quantity = parseInt(quantityInput.value);
+    const total = price * quantity;
+    const formattedTotal = total.toFixed(2);
+    console.log(`Total price: $${formattedTotal}`);
+  });
+
+  // ADD TO CART FUNCTION
+  function addToCart(event) {
+    const target = event.target;
+    if (!target.classList.contains("add-to-cart")) {
+      return; // ignore clicks on non-add-to-cart elements
+    }
+
+    console.log(target.dataset.id);
+    const gameID = target.dataset.id;
+    console.log("gameID is: ", gameID);
+    const game = games.find((g) => parseInt(g.id, 10) === parseInt(gameID, 10));
+    console.log("game is: ", game);
+    const coverImage = game.coverImage;
+    let quantity = 1;
+    const isWishlisted = game.isWishlisted;
+    console.log("game.id is: ", game.id);
+    console.log("game.isWishlisted is: ", game.isWishlisted);
+    console.log("coverImage is: ", coverImage);
+    const container = target.closest(".container");
+    const itemName = container.querySelector(".game-title .type").textContent;
+    const price = parseFloat(
+      container.querySelector(".currentPrice").textContent
+    );
+    const platformShort =
+      container.querySelector(".gametitle-info").textContent;
+    const total = price * quantity;
+    const formattedTotal = total.toFixed(2);
+    const product = {
+      id: gameID,
+      name: itemName,
+      coverImage: coverImage,
+      isWishlisted: isWishlisted,
+      quantity: quantity,
+      price: price,
+      total: formattedTotal,
+      platformShort: platformShort,
     };
 
-    
-    // Add event listeners to the buttons
-    document.querySelector('.add-to-cart').addEventListener('click', addToCart);
-    document.querySelector('.checkout-event').addEventListener('click', () => {
-      localStorage.removeItem('cart');
-      // Other checkout logic goes here
-      console.log(localStorage.cart);
-    });
-  };
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProductIndex = cart.findIndex((p) => p.id === gameID);
+    if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity += quantity;
+      cart[existingProductIndex].total = (
+        cart[existingProductIndex].quantity * cart[existingProductIndex].price
+      ).toFixed(2);
+    } else {
+      cart.push(product);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("cart is: ", cart);
+  }
+
+  // function addToCart() {
+  //   const quantity = parseInt(quantityInput.value);
+  //   console.log("game is: ", game);
+  //   const coverImage = game.coverImage;
+  //   console.log("game.id is: ", game.id);
+  //   console.log("game.isWishlisted is: ", game.isWishlisted);
+  //   const itemName = game.itemName;
+  //   const currentPrice = game.currentPrice;
+  //   const beforePrice = game.beforePrice;
+  //   const platformShort = game.platformShort;
+  //   const type = game.type;
+  //   const releaseDate = game.releaseDate;
+  //   const isWishlisted = game.isWishlisted;
+  //   const region = game.region;
+  //   const platform = game.platform;
+  //   const gamespotRating = game.gamespotRating;
+  //   const total = currentPrice * quantity;
+  //   const formattedTotal = total.toFixed(2);
+  //   const product = {
+  //     id: game.id,
+  //     itemName: itemName,
+  //     coverImage: coverImage,
+  //     isWishlisted: isWishlisted,
+  //     releaseDate: releaseDate,
+  //     type: type,
+  //     region: region,
+  //     platform: platform,
+  //     gamespotRating: gamespotRating,
+  //     quantity: 1,
+  //     currentPrice: currentPrice,
+  //     beforePrice: beforePrice,
+  //     platformShort: platformShort,
+  //     name: itemName,
+  //     coverImage: coverImage,
+  //     quantity: quantity,
+  //     price: currentPrice,
+  //     platformShort: `${platformShort} | ${type} Version`,
+  //     total: formattedTotal
+  //   };
+  //   console.log(product);
+  //   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  //   cart.push(product);
+  //   localStorage.setItem('cart', JSON.stringify(cart));
+  // };
+  // Add event listeners to the buttons
+  document.querySelector(".add-to-cart").addEventListener("click", addToCart);
+  document.querySelector(".checkout-event").addEventListener("click", () => {
+    localStorage.removeItem("cart");
+    // Other checkout logic goes here
+    console.log(localStorage.cart);
+  });
+};
   createDetails();
 
 // ADD TO WISHLIST FUNCTION

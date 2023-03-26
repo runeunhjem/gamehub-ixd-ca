@@ -136,64 +136,52 @@ function createDetails() {
     });
     
     // ADD TO CART FUNCTION
-    function addToCart() {      
-      const quantity = parseInt(quantityInput.value);        
-      console.log("game is: ", game);
-      const coverImage = game.coverImage;      
-      console.log("game.id is: ", game.id);
-      console.log("game.isWishlisted is: ", game.isWishlisted);      
-      const itemName = game.itemName;
-      const currentPrice = game.currentPrice;      
-      const beforePrice = game.beforePrice;
-      const platformShort = game.platformShort;
-      const type = game.type;
-      const releaseDate = game.releaseDate;
-      const isWishlisted = game.isWishlisted;
-      const region = game.region;
-      const platform = game.platform;
-      const gamespotRating = game.gamespotRating;
-      const total = currentPrice * quantity;
-      const formattedTotal = total.toFixed(2);
-      const product = {
-        id: game.id,
-        itemName: itemName,
-        coverImage: coverImage,
-        isWishlisted: isWishlisted,
-        releaseDate: releaseDate,
-        type: type,
-        region: region,
-        platform: platform,
-        gamespotRating: gamespotRating,
-        quantity: 1,
-        currentPrice: currentPrice,
-        beforePrice: beforePrice,        
-        platformShort: platformShort,
-        name: itemName,
-        coverImage: coverImage,
-        quantity: quantity,
-        price: currentPrice,
-        platformShort: `${platformShort} | ${type} Version`,
-        total: formattedTotal
-      };
-      console.log(product);
-      
-       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-       const existingProductIndex = cart.findIndex((p) => p.id === gameID);
-       if (existingProductIndex !== -1) {
-         cart[existingProductIndex].quantity += quantity;
-         cart[existingProductIndex].total = (
-           cart[existingProductIndex].quantity *
-           cart[existingProductIndex].price
-         ).toFixed(2);
-       } else {
-         cart.push(product);
-       }
-       localStorage.setItem("cart", JSON.stringify(cart));
-       console.log("cart is: ", cart);  
-
-    };
-
     
+
+    // function addToCart() {      
+    //   const quantity = parseInt(quantityInput.value);        
+    //   console.log("game is: ", game);
+    //   const coverImage = game.coverImage;      
+    //   console.log("game.id is: ", game.id);
+    //   console.log("game.isWishlisted is: ", game.isWishlisted);      
+    //   const itemName = game.itemName;
+    //   const currentPrice = game.currentPrice;      
+    //   const beforePrice = game.beforePrice;
+    //   const platformShort = game.platformShort;
+    //   const type = game.type;
+    //   const releaseDate = game.releaseDate;
+    //   const isWishlisted = game.isWishlisted;
+    //   const region = game.region;
+    //   const platform = game.platform;
+    //   const gamespotRating = game.gamespotRating;
+    //   const total = currentPrice * quantity;
+    //   const formattedTotal = total.toFixed(2);
+    //   const product = {
+    //     id: game.id,
+    //     itemName: itemName,
+    //     coverImage: coverImage,
+    //     isWishlisted: isWishlisted,
+    //     releaseDate: releaseDate,
+    //     type: type,
+    //     region: region,
+    //     platform: platform,
+    //     gamespotRating: gamespotRating,
+    //     quantity: 1,
+    //     currentPrice: currentPrice,
+    //     beforePrice: beforePrice,        
+    //     platformShort: platformShort,
+    //     name: itemName,
+    //     coverImage: coverImage,
+    //     quantity: quantity,
+    //     price: currentPrice,
+    //     platformShort: `${platformShort} | ${type} Version`,
+    //     total: formattedTotal
+    //   };
+    //   console.log(product);
+    //   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    //   cart.push(product);
+    //   localStorage.setItem('cart', JSON.stringify(cart));
+    // };
     // Add event listeners to the buttons
     document.querySelector('.add-to-cart').addEventListener('click', addToCart);
     document.querySelector('.checkout-event').addEventListener('click', () => {

@@ -141,7 +141,8 @@ function createDetails() {
       console.log("game is: ", game);
       const coverImage = game.coverImage;      
       console.log("game.id is: ", game.id);
-      console.log("game.isWishlisted is: ", game.isWishlisted);      
+      console.log("game.isWishlisted is: ", game.isWishlisted);
+      console.log("coverImage is: ", coverImage);      
       const itemName = game.itemName;
       const currentPrice = game.currentPrice;      
       const beforePrice = game.beforePrice;
@@ -176,24 +177,10 @@ function createDetails() {
         total: formattedTotal
       };
       console.log(product);
-      
-       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-       const existingProductIndex = cart.findIndex((p) => p.id === gameID);
-       if (existingProductIndex !== -1) {
-         cart[existingProductIndex].quantity += quantity;
-         cart[existingProductIndex].total = (
-           cart[existingProductIndex].quantity *
-           cart[existingProductIndex].price
-         ).toFixed(2);
-       } else {
-         cart.push(product);
-       }
-       localStorage.setItem("cart", JSON.stringify(cart));
-       console.log("cart is: ", cart);  
-
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
     };
-
-    
     // Add event listeners to the buttons
     document.querySelector('.add-to-cart').addEventListener('click', addToCart);
     document.querySelector('.checkout-event').addEventListener('click', () => {
